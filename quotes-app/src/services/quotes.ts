@@ -18,4 +18,5 @@ export class QuotesService {
   getFavoriteQuotes() {
     return this.favoriteQuotes.slice();
   }
+
 }
