@@ -16,6 +16,7 @@
                    name="ingredientName"
                    placeholder="Maito"
                    ngModel
+                   required
         ></ion-input>
       </ion-item>
     </ion-list>
@@ -26,12 +27,20 @@
                    name="amount"
                    placeholder="3"
                    ngModel
+                   required
         ></ion-input>
       </ion-item>
     </ion-list>
     <button ion-button
             type="submit"
             block
+            [disabled]="!f.valid"
     >Add Item</button>
   </form>
+  <ion-list>
+    <ion-item *ngFor="let item of listItems; let i = index" (click)="onCheckItem(i)">
+      <h3>{{ item.name }} ({{item.amount}})</h3>
+    </ion-item>
+    <ion-item></ion-item>
+  </ion-list>
 </ion-content>
